@@ -55,42 +55,42 @@ interface FormData {
     if (currentStep > 1) setCurrentStep(currentStep - 1);
   };
 
-  const handleRegister = async () => {
-    setMessage('');
+  // const handleRegister = async () => {
+  //   setMessage('');
 
-    // ✅ Confirm password check
-    if (formData.password !== confirmPassword) {
-      setMessage('❌ Passwords do not match');
-      return;
-    }
+  //   // ✅ Confirm password check
+  //   if (formData.password !== confirmPassword) {
+  //     setMessage('❌ Passwords do not match');
+  //     return;
+  //   }
 
-    setLoading(true);
-    try {
-      const res = await fetch('https://farmchain.onrender.com/user/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+  //   setLoading(true);
+  //   try {
+  //     const res = await fetch('https://farmchain.onrender.com/user/register', {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/json' },
+  //       body: JSON.stringify(formData),
+  //     });
 
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.message || 'Registration failed');
+  //     const data = await res.json();
+  //     if (!res.ok) throw new Error(data.message || 'Registration failed');
 
-      setMessage('✅ Account created successfully!');
+  //     setMessage('✅ Account created successfully!');
 
-      toast.success('Account created successfully!');
+  //     toast.success('Account created successfully!');
 
-      setTimeout(() => {
-        router.push('/auth/login');
-      }, 2000);
+  //     setTimeout(() => {
+  //       router.push('/auth/login');
+  //     }, 2000);
 
-    } catch (err: any) {
-      setMessage(`❌ ${err.message}`);
-    } finally {
-      setLoading(false);
-    }
+  //   } catch (err: any) {
+  //     setMessage(`❌ ${err.message}`);
+  //   } finally {
+  //     setLoading(false);
+  //   }
 
 
-  };
+  // };
 
   return (
     <div >
@@ -416,7 +416,6 @@ interface FormData {
               </button>
               <button
                 type="button"
-                onClick={handleRegister}
                 disabled={loading}
                 className="flex-1 bg-gradient-to-r from-green-600 to-emerald-600 text-white py-3 rounded-xl font-bold hover:shadow-lg transition-all"
               >
@@ -435,8 +434,6 @@ export default RegisterChain;
 
 
 
-
-// import React from 'react'
 // import { useState } from 'react';
 
 // const RegisterChain = () => {

@@ -33,7 +33,7 @@ const CtaPage = () => {
             </h2>
             <p className="text-xl lg:text-2xl text-white leading-relaxed">
               Join thousands of farmers who are already growing smarter, trading better, 
-              and building stronger communities through Farm Chain.
+              and building stronger communities through StarkField.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">

@@ -164,7 +164,7 @@ const HeroPage = () => {
                       <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
                         🌾
                       </div>
-                      <span className="font-bold">Farm Chain</span>
+                      <span className="font-bold">StarkField</span>
                     </div>
                     <div className="flex space-x-2">
                       <div className="w-3 h-3 bg-white/30 rounded-full"></div>
@@ -174,7 +174,7 @@ const HeroPage = () => {
                   </div>
                   <div className="space-y-2">
                     <p className="text-lg font-semibold">
-                      Welcome to Farm Chain! 👋
+                      Welcome to StarkField! 👋
                     </p>
                     <p className="text-green-100">Your farm is thriving</p>
                   </div>

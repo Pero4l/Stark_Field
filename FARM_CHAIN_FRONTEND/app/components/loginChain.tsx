@@ -32,48 +32,48 @@ const LoginPage = () => {
 
   const router = useRouter();
 
-  const handleLogin = async () => {
-    setMessage("");
-    setLoading(true);
+  // const handleLogin = async () => {
+  //   setMessage("");
+  //   setLoading(true);
 
-    try {
-      const res = await fetch("https://farmchain.onrender.com/user/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(loginData),
-      });
+  //   try {
+  //     const res = await fetch("https://farmchain.onrender.com/user/login", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(loginData),
+  //     });
 
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.message || "Login failed");
+  //     const data = await res.json();
+  //     if (!res.ok) throw new Error(data.message || "Login failed");
 
-      setMessage("✅ Login successfully!");
-      toast.success("Login successfully!");
+  //     setMessage("✅ Login successfully!");
+  //     toast.success("Login successfully!");
 
-      // Only run on client
-      if (typeof window !== "undefined") {
-        localStorage.setItem("farmchain_token", data.token ?? "");
-        localStorage.setItem("farmchain_user", JSON.stringify(data.user));
-        localStorage.setItem("isLoggedIn", "true");
-        localStorage.setItem("userProfile", JSON.stringify(data.profile));
-      }
+  //     // Only run on client
+  //     if (typeof window !== "undefined") {
+  //       localStorage.setItem("farmchain_token", data.token ?? "");
+  //       localStorage.setItem("farmchain_user", JSON.stringify(data.user));
+  //       localStorage.setItem("isLoggedIn", "true");
+  //       localStorage.setItem("userProfile", JSON.stringify(data.profile));
+  //     }
 
-      // update context
-      setToken(data.token ?? null);
-      setUserProfile(data.profile);
-      setUser(data.user);
+  //     // update context
+  //     setToken(data.token ?? null);
+  //     setUserProfile(data.profile);
+  //     setUser(data.user);
 
-      // console.log(data.user);
-      // console.log(data.profile);
+  //     // console.log(data.user);
+  //     // console.log(data.profile);
 
-      setTimeout(() => {
-        router.push("/main");
-      }, 1000);
-    } catch (err: any) {
-      setMessage(`❌ ${err.message}`);
-    } finally {
-      setLoading(false);
-    }
-  };
+  //     setTimeout(() => {
+  //       router.push("/main");
+  //     }, 1000);
+  //   } catch (err: any) {
+  //     setMessage(`❌ ${err.message}`);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   return (
     <div>
@@ -167,7 +167,6 @@ const LoginPage = () => {
 
           <button
             type="button"
-            onClick={handleLogin}
             disabled={loading}
             className="w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white py-3 rounded-xl font-bold hover:shadow-lg transition-all"
           >

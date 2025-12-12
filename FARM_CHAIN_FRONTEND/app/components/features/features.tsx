@@ -61,7 +61,7 @@ const FeaturePage = () => {
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              From community connections to smart trading, Farm Chain provides all the tools 
+              From community connections to smart trading, StarkField provides all the tools 
               modern farmers need to succeed in today's agricultural landscape.
             </p>
           </div>

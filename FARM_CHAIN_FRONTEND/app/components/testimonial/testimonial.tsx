@@ -26,7 +26,7 @@ const testimonials = [
       role: "Cooperative Manager",
       location: "Texas, USA", 
       avatar: "MR",
-      content: "Managing our 20-farm cooperative became effortless with Farm Chain. The weather alerts saved us from drought damage, and our community sharing increased yields across all farms.",
+      content: "Managing our 20-farm cooperative became effortless with StarkField. The weather alerts saved us from drought damage, and our community sharing increased yields across all farms.",
       rating: 5,
       verified: true,
       farmSize: "Cooperative - 1,200 acres"
@@ -36,7 +36,7 @@ const testimonials = [
       role: "Commercial Farm",
       location: "California, USA",
       avatar: "AS", 
-      content: "The analytics and market insights on Farm Chain are game-changing. We optimized our crop planning and connected with suppliers globally, reducing costs by 25%.",
+      content: "The analytics and market insights on StarkField are game-changing. We optimized our crop planning and connected with suppliers globally, reducing costs by 25%.",
       rating: 5,
       verified: true,
       farmSize: "2,500 acres"

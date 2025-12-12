@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FarmChain",
+  title: "StarkField",
   description: "Revolutionizing Agriculture Together",
 };
 

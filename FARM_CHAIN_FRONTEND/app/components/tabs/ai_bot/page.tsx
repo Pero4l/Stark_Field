@@ -16,7 +16,7 @@ const AIChat: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 0,
-      text: 'Welcome to FarmChain AI! Your intelligent assistant for farming knowledge, community help, and real-time insights. Start by typing your question below.',
+      text: 'Welcome to StarkField AI! Your intelligent assistant for farming knowledge, community help, and real-time insights. Start by typing your question below.',
       sender: 'ai',
     },
   ]);

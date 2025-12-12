@@ -6,7 +6,7 @@ import CurrentUserProvider from "@/app/components/currentUser";
 const Mainpage = () => {
   return (
     <div>
-        <RequireAuth>
+    
 
         <CurrentUserProvider>
           
@@ -14,7 +14,7 @@ const Mainpage = () => {
 
         </CurrentUserProvider>
         
-        </RequireAuth>
+      
       
     </div>
   )

@@ -66,7 +66,7 @@ const MainNavPage = () => {
                   <div className="flex items-center gap-2">
                     <div>
                       <h1 onClick={() => { setActiveTab("dashboard"); setIsMenuOpen(false); }}  className="text-3xl md:text-2xl font-black bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-                        FarmChain
+                        StarkFeld
                       </h1>
                       <p className="hidden lg:flex text-xs text-gray-500 font-semibold">Revolutionizing Agriculture Together</p>
                     </div>

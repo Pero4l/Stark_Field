@@ -17,7 +17,7 @@ const Footer = () => {
                         <span className="text-white font-bold text-xl">🌾</span>
                       </div>
                       <div>
-                        <h3 className="text-2xl font-black">Farm Chain</h3>
+                        <h3 className="text-2xl font-black">StarkField</h3>
                         <p className="text-gray-400 text-sm">Connecting Agriculture</p>
                       </div>
                     </div>
