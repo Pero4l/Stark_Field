@@ -18,7 +18,7 @@ const Button = ({ onClose }: ButtonProps) => {
         {/* <Link
           href="/auth/register"
           className="bg-green-600 text-white lg:px-12 lg:w-fit md:px-32 px-12 py-3 rounded-l-full hover:bg-green-700 transition"
-          onClick={onClose}
+          onClick={onClose}s
         >
           Sign Up
         </Link> */}
@@ -35,6 +35,3 @@ const Button = ({ onClose }: ButtonProps) => {
 };
 
 export default Button;
-
-
-
