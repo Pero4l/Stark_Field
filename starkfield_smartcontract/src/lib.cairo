@@ -1,8 +1,8 @@
 use starknet::ContractAddress;
 
-/// Interface for the FarmChain contract
+/// Interface for the StarkField contract
 #[starknet::interface]
-pub trait IFarmChain<TContractState> {
+pub trait IStarkField<TContractState> {
     fn register_user(ref self: TContractState, name: felt252);
     fn get_user_name(self: @TContractState, user_address: ContractAddress) -> felt252;
     fn create_listing(ref self: TContractState, title: felt252, price: u256) -> u256;
@@ -12,9 +12,9 @@ pub trait IFarmChain<TContractState> {
     fn get_total_listings(self: @TContractState) -> u256;
 }
 
-/// Main FarmChain contract
+/// Main StarkField contract
 #[starknet::contract]
-mod FarmChain {
+mod StarkField {
     use starknet::{ContractAddress, get_caller_address};
     use starknet::storage::{
         StorageMapReadAccess,
@@ -59,7 +59,7 @@ mod FarmChain {
     }
 
     #[abi(embed_v0)]
-    impl FarmChainImpl of super::IFarmChain<ContractState> {
+    impl StarkFieldImpl of super::IStarkField<ContractState> {
         fn register_user(ref self: ContractState, name: felt252) {
             let caller = get_caller_address();
             
