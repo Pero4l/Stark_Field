@@ -28,6 +28,8 @@ const Button = ({ onClose }: ButtonProps) => {
   });
 
 
+  const {account, isConnected, address} = useAccount();
+
   async function connectWallet() {
     const { connector } = await starknetkitConnectModal();
     if (!connector) {
@@ -49,13 +51,17 @@ const Button = ({ onClose }: ButtonProps) => {
         >
           Sign Up
         </Link> */}
-        <Link
-          href=""
+       {isConnected ?  <button
+          className="border border-red-600 text-red-600 lg:px-12 lg:w-fit md:px-32 px-10 py-3 font-bold rounded-full hover:bg-red-600 hover:text-white transition bg-white relative md:right-4 lg:right-7 right-7"
+        
+        >
+          Disconnect Wallet
+        </button> : <button
           className="border border-green-600 text-green-600 lg:px-12 lg:w-fit md:px-32 px-10 py-3 font-bold rounded-full hover:bg-green-600 hover:text-white transition bg-white relative md:right-4 lg:right-7 right-7"
           onClick={connectWallet}
         >
           Connect Wallet
-        </Link>
+        </button>}
       </div>
     </div>
   );
