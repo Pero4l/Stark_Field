@@ -2,13 +2,40 @@
 import Link from "next/link";
 import React from "react";
 import { useState } from "react";
+
 // Add type for props
 type ButtonProps = {
   onClose?: () => void;
 };
 // import ThemeToggle from '../toggle'
 
+
+import {
+  Connector,
+  useAccount,
+  useConnect,
+  useDisconnect,
+} from '@starknet-react/core';
+import { StarknetkitConnector, useStarknetkitConnectModal } from 'starknetkit';
+
 const Button = ({ onClose }: ButtonProps) => {
+
+  const { connect, connectors } = useConnect();
+
+  
+  const { starknetkitConnectModal } = useStarknetkitConnectModal({
+    connectors: connectors as StarknetkitConnector[],
+  });
+
+
+  async function connectWallet() {
+    const { connector } = await starknetkitConnectModal();
+    if (!connector) {
+      return;
+    }
+    await connect({ connector: connector as Connector });
+  }
+
   return (
     <div>
       {/* <ThemeToggle/> */}
@@ -23,9 +50,9 @@ const Button = ({ onClose }: ButtonProps) => {
           Sign Up
         </Link> */}
         <Link
-          href="/auth/login"
+          href=""
           className="border border-green-600 text-green-600 lg:px-12 lg:w-fit md:px-32 px-10 py-3 font-bold rounded-full hover:bg-green-600 hover:text-white transition bg-white relative md:right-4 lg:right-7 right-7"
-          onClick={onClose}
+          onClick={connectWallet}
         >
           Connect Wallet
         </Link>

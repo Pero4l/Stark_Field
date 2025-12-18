@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -6,6 +7,7 @@ import Navbar from "./components/layout/navbar";
 import { ActiveTabProvider } from "./context/ActiveTabContext";
 import { ThemeProvider } from "next-themes";
 import ClientProviders from "@/app/components/ClientProviders";
+import { StarknetProvider } from "@/starknetProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,8 +36,11 @@ export default function RootLayout({
         <ClientProviders>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem={false}>
             <ActiveTabProvider>
-              <Navbar />
-              {children}
+             
+              <StarknetProvider>
+                 <Navbar />
+                {children}
+                </StarknetProvider>
               <Footer />
             </ActiveTabProvider>
           </ThemeProvider>
