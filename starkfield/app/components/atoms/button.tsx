@@ -21,6 +21,7 @@ import { StarknetkitConnector, useStarknetkitConnectModal } from 'starknetkit';
 const Button = ({ onClose }: ButtonProps) => {
 
   const { connect, connectors } = useConnect();
+  const { disconnect } = useDisconnect();
 
   
   const { starknetkitConnectModal } = useStarknetkitConnectModal({
@@ -30,6 +31,7 @@ const Button = ({ onClose }: ButtonProps) => {
 
   const {account, isConnected, address} = useAccount();
 
+  // connect wallet 
   async function connectWallet() {
     const { connector } = await starknetkitConnectModal();
     if (!connector) {
@@ -38,9 +40,16 @@ const Button = ({ onClose }: ButtonProps) => {
     await connect({ connector: connector as Connector });
   }
 
+  // disconnect wallet
+  async function disconnectWallet() {
+    await disconnect();
+  }
   return (
-    <div>
+    <div className="flex gap-5">
       {/* <ThemeToggle/> */}
+
+      
+
 
       {/* BUTTONS */}
       <div className="flex  justify-center left-5 lg:flex relative lg:left-10">
@@ -51,9 +60,11 @@ const Button = ({ onClose }: ButtonProps) => {
         >
           Sign Up
         </Link> */}
+
+        
        {isConnected ?  <button
           className="border border-red-600 text-red-600 lg:px-12 lg:w-fit md:px-32 px-10 py-3 font-bold rounded-full hover:bg-red-600 hover:text-white transition bg-white relative md:right-4 lg:right-7 right-7"
-        
+          onClick={disconnectWallet}
         >
           Disconnect Wallet
         </button> : <button
@@ -63,6 +74,10 @@ const Button = ({ onClose }: ButtonProps) => {
           Connect Wallet
         </button>}
       </div>
+
+      {isConnected && <p className="space-x-5 text-gray-600 font-medium  flex items-center">
+          {address?.slice(0, 6)}...{address?.slice(-4)}
+        </p>}
     </div>
   );
 };
